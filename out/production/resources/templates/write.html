@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Write</title>
+    <link href="/main.css" rel="stylesheet">
+</head>
+<body>
+
+<div th:replace="~{ nav.html::navber }"></div>
+
+<form method="POST" action="/add">
+    <input name = "title">
+    <input name = "price">
+    <button type="submit">전송</button>
+</form>
+
+</body>
+</html>
