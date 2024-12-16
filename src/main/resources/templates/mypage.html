@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Power Supply Depot</title>
+    <link href="/main.css" rel="stylesheet">
+</head>
+<body>
+
+<div th:replace="~{ nav.html::navber }"></div>
+
+<h4>로그인</h4>
+
+<div th:if="${param.error}">
+    <h4>로그인 정보가 틀렸습니다.</h4>
+</div>
+
+<form method="POST" action="/login">
+    <input name = "username">
+    <input name = "password" type="password">
+    <button type="submit">전송</button>
+</form>
+
+</body>
+</html>

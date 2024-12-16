@@ -2,20 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Item list</title>
+    <title>Power Supply Depot</title>
     <link href="/main.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
 </head>
 <body>
 
 <div th:replace="~{ nav.html::navber }"></div>
 
-<div class = "card" th:each="i : ${items}">
-    <img src="https://placehold.co/300">
-    <div>
-        <h4 th:text="${i.title}">이름</h4>
-        <p th:text="${i.price}">8억</p>
+<div class="card-container">
+    <div class="card" th:each="i : ${items}">
+        <img src="https://placehold.co/300" alt="Product Image">
+        <h4 th:text="${i.title}">Product Title</h4>
+        <p th:text="${i.price + ' 원'}">Product Price</p>
+        <a th:href="@{'/detail/' + ${i.id}}">View</a>
+        <a th:href="@{'/edit/' + ${i.id}}">Edit</a>
+        <span th:onclick="fetch('/item?id=[[${i.id}]]', { method : 'DELETE' } )
+            .then(r => r.text())
+            .then(() => {
+                location.reload();
+            })">Delete</span>
     </div>
 </div>
+
+<button class="btn">1</button>
+
+<script>
+    document.querySelectorAll('.btn')[0].addEventListener('click', function(){
+        fetch('/test1', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: 'kim' })
+        });
+    });
+</script>
 
 </body>
 </html>

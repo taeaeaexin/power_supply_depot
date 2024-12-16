@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Power Supply Depot</title>
+    <link href="/main.css" rel="stylesheet">
+</head>
+<body>
+
+<div th:replace="~{ nav.html::navber }"></div>
+<h4>회원가입</h4>
+
+<form action="/member" method="POST">
+    <input name = "displayName" placeholder="이름">
+    <input name = "username" placeholder="아이디">
+    <input name = "password" placeholder="password">
+    <button type = "submit">가입</button>
+</form>
+
+</body>
+</html>

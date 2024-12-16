@@ -2,17 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Write</title>
+    <title>Power Supply Depot</title>
     <link href="/main.css" rel="stylesheet">
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* 각 요소 간 간격 */
+            max-width: 400px;
+            margin: 50px auto; /* 화면 중앙 정렬 */
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            padding: 10px;
+            background: #e63946;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #f0f0f0;
+            color: #121212;
+        }
+    </style>
 </head>
 <body>
 
 <div th:replace="~{ nav.html::navber }"></div>
 
 <form method="POST" action="/add">
-    <input name = "title">
-    <input name = "price">
-    <button type="submit">전송</button>
+<!--    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">-->
+
+    <input name="title" placeholder="title">
+    <input name="price" placeholder="price">
+    <button type="submit">생성</button>
 </form>
 
 </body>

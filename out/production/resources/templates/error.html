@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Supply Depot</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: #121212; /* 검은색 배경 */
+            color: #f0f0f0; /* 밝은 회색 텍스트 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .error-container {
+            max-width: 600px;
+            background: #1f1f1f; /* 짙은 회색 카드 */
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #e63946; /* 강렬한 빨간색 강조 */
+        }
+        p {
+            margin: 10px 0; /* 요소 간격 추가 */
+            font-size: 1.2em;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #e63946; /* 빨간색 강조 */
+        }
+        a {
+            display: inline-block; /* 블록 요소로 간격 확보 */
+            margin-top: 20px; /* 버튼과 위 요소 간 간격 추가 */
+            text-decoration: none;
+            color: #f0f0f0;
+            font-weight: bold;
+            border: 1px solid #e63946;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background: #e63946; /* 버튼 색상 */
+            transition: all 0.3s ease;
+        }
+        a:hover {
+            background: #f0f0f0;
+            color: #121212;
+        }
+        .error-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            color: #e63946; /* 오류 아이콘 강조 */
+        }
+    </style>
+</head>
+<body>
+<div class="error-container">
+    <div class="error-icon">⚠️</div>
+    <h1>Oops! Something Went Wrong</h1>
+    <p><span class="highlight">Status:</span> <span th:text="${status}"></span></p>
+    <p><span class="highlight">Error:</span> <span th:text="${error}"></span></p>
+    <p><span class="highlight">Path:</span> <span th:text="${path}"></span></p>
+    <p><span class="highlight">Message:</span> <span th:text="${message}"></span></p>
+    <a href="/list">Return to Home</a>
+</div>
+</body>
+</html>
