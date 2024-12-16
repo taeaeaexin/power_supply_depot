@@ -47,5 +47,6 @@ public class MemberController {
         CustomUser result = (CustomUser) auth.getPrincipal();
         System.out.println(result.displayName);
         return "mypage.html";
+        
     }
 }
