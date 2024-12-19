@@ -48,4 +48,9 @@ public class MemberController {
         System.out.println(result.displayName);
         return "mypage.html";
     }
+
+    @GetMapping("/user/1")
+    public String getUser(){
+        return "";
+    }
 }

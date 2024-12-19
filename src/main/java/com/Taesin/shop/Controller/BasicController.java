@@ -8,6 +8,5 @@ public class BasicController {
     @GetMapping("/")
     public String home(){
         return "index.html";
-
     }
 }

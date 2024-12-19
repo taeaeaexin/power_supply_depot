@@ -2,11 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Power Supply Depot</title>
+    <link href="/main.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: #121212; /* 어두운 배경 */
+            color: #f0f0f0;
+            text-align: center;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* 화면 전체 높이 */
+            gap: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #e63946; /* 강조 색상 */
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 15px;
+        }
+
+        a.main-button {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #f0f0f0;
+            background: #e63946; /* 버튼 배경 색상 */
+            border-radius: 5px;
+            transition: background 0.3s ease, transform 0.3s ease;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        a.main-button:hover {
+            background: #f0f0f0; /* 호버 시 색 반전 */
+            color: #121212;
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
-<div>
-    <p> Hello World! </p>
+
+<div class="main-container">
+    <h1>Welcome to Power Supply Depot</h1>
+    <p>최고의 헬스 보충제와 운동기구를 만나보세요!</p>
+    <div class="button-container">
+        <a href="/login" class="main-button">로그인</a>
+        <a href="/register" class="main-button">회원가입</a>
+    </div>
 </div>
 
 </body>
