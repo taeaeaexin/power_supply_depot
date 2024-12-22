@@ -25,7 +25,16 @@
     </div>
 </div>
 
-<button class="btn">1</button>
+<div class="pagination">
+    <ul>
+        <li th:each="i : ${#numbers.sequence(1, totalPages)}">
+            <a th:href="@{/list/page/{page}(page=${i})}"
+               th:class="${i == currentPage} ? 'btn current' : 'btn'">
+                <span th:text="${i}">Page</span>
+            </a>
+        </li>
+    </ul>
+</div>
 
 <script>
     document.querySelectorAll('.btn')[0].addEventListener('click', function(){

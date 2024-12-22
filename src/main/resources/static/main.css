@@ -208,3 +208,36 @@ button.btn:hover {
     color: #121212; /* 텍스트 색상 반전 */
     transform: scale(1.1); /* 약간 커지는 효과 */
 }
+.pagination ul {
+    display: flex; /* 가로 정렬 */
+    justify-content: center; /* 중앙 정렬 */
+    padding: 0;
+    list-style: none; /* 기본 목록 스타일 제거 */
+}
+
+.pagination ul li {
+    margin: 0 5px; /* 버튼 간 간격 */
+}
+
+.pagination .btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #e63946;
+    color: #f0f0f0;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    font-size: 1em;
+}
+
+.pagination .btn:hover {
+    background: #f0f0f0;
+    color: #121212;
+}
+
+.pagination .btn.current {
+    background: #f0f0f0; /* 현재 페이지 강조 */
+    color: #121212;
+    font-weight: bold;
+    pointer-events: none; /* 클릭 불가능하게 설정 */
+}
